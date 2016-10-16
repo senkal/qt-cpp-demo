@@ -14,7 +14,7 @@ void FileReader::readFile()
     QTextStream in(&file);
     while (!in.atEnd()) {
         QString line = in.readLine();
-        process_line(line);
+        //process_line(line);
     }
     file.close();
     file.flush();
