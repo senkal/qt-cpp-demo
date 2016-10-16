@@ -4,9 +4,11 @@
 #include <QDebug>
 #include <QUrl>
 #include <QQmlContext>
+#include <qqml.h>
 
 #include <QStandardPaths>
 #include <QStringList>
+#include <filereader.h>
 
 int main(int argc, char *argv[])
 {
@@ -27,6 +29,8 @@ int main(int argc, char *argv[])
 
     engine.rootContext()->setContextProperty("appPath",appPath);
     engine.rootContext()->setContextProperty("moviesPath",moviesPath);
+
+    qmlRegisterType<FileReader>("Files", 0, 1, "ReadFile");
 
 //    qDebug() << "This is where the applicaiton runs " << appPath;
 
